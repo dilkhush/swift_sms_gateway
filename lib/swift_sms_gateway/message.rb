@@ -4,7 +4,7 @@ require_relative "errors"
 module SwiftSmsGateway
   class Message
 
-    BASE_URL = "https://secure.smsgateway.ca/services/"
+    BASE_URL = "https://secure.smsgateway.ca/services"
 
     def initialize(account_key)
       @account_key = account_key
@@ -12,7 +12,7 @@ module SwiftSmsGateway
 
     def create(params)
       url = "#{BASE_URL}/message.svc/#{@account_key}/#{params[:to]}"
-      @response = HTTP.post(url, {MessageBody: params[:body]} )
+      @response = HTTP.post(url, { json: {MessageBody: params[:body]} } )
       send_response
     end
 
