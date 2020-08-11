@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "swift_sms_gateway"
-  spec.version       = "0.0.1"
+  spec.version       = "0.0.3"
   spec.authors       = ["Dilkhush Soni"]
   spec.email         = ["dilkhushsoni2010@gmail.com"]
 
@@ -19,6 +19,6 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 2.2.6'
 
   spec.add_development_dependency "bundler", "~> 1.15"
-  spec.add_runtime_dependency "http", "~> 2.2.2"
+  spec.add_runtime_dependency "http", ">= 2.2.2"
 
 end

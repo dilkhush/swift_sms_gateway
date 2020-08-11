@@ -19,7 +19,7 @@ module SwiftSmsGateway
     def send_response
       case @response.code
       when 200, 201, 204
-        @response.parse
+        JSON.parse(@response)
       else
         raise SwiftSmsGatewayError, @response
       end
